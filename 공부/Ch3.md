@@ -80,10 +80,65 @@ HTTP 메시지에 모든것을 전송
    * **지금은 HTTP 지속 연결로 문제 해결**
 
 
+# HTTP 메시지
 
+HTTP 요청 메시지:
 
+    GET /search?q=hello&hl=ko HTTP/1.1 Host: www.google.com
 
+#### 시작 라인
+요청메시지
+
+* HTTP 메서드(GET)
+  * 종류:GET,POST,PUT,DELETE...
+  * 서버가 수행해야할 동작 지정
+    * GET: 리소스 조회
+    * POST 요청 내역 처리
+   
+     
+* 요청 대상(/search?q=hello&hl=ko)
+  * absolute-path[?query] (절대경로[?쿼리])
+  * 절대경로="/"로 시작하는 경로 
+* HTTP Version
+  * HTTP 1.1
   
+
+
+HTTP 응답 메시지:
+
+     HTTP/1.1 200 OK
+    Content-Type: text/html;charset=UTF-8 Content-Length: 3423
+    <html> <body>...</body>
+    </html>
+### 시작 라인
+응답 메시지
+
+* HTTP 버전
+  * HTTP 1.1
+* HTTP 상태 코드:요청 성공,실패를 나타냄
+  * 200: 성공
+  * 400: 클라이언트 요청 오류
+  * 500: 서버 내부 오류
+* 이유 문구:사람이 이해 가능한 짧은 상태 코드 설명 글
+
+### HTTP 헤더
+  Content-Type: text/html;charset=UTF-8 Content-Length: 3423
+
+* HTTP 전송에 필요한 모든 부가 정보
+  * 예) ) 메시지 바디의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트(브라우저) 정보,서버 애플리케이션 정보, 캐시 관리 정보...
+
+### HTTP 메시지 바디
+  
+    <html> <body>...</body>
+    </html>
+
+
+* 실제 전송할 데이터
+  * HTML 문서, 이미지, 영상, JSON 등등 byte로 표현할 수 있는 모든 데이터 전송 가능 
+ 
+
+
+
 
 
 
